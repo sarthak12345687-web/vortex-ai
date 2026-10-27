@@ -1,0 +1,1 @@
+const cache='vortex-phone-v1';self.addEventListener('install',e=>e.waitUntil(caches.open(cache).then(c=>c.addAll(['./','./index.html','./style.css','./app.js','./icon.svg']))));self.addEventListener('fetch',e=>{if(e.request.method==='GET'&&new URL(e.request.url).origin===self.location.origin)e.respondWith(fetch(e.request).catch(()=>caches.match(e.request)))});
